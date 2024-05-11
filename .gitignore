@@ -70,3 +70,14 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+.DS_Store
+Assets/.DS_Store
+Assets/Cinema Suite/.DS_Store
+Assets/NaughtyAttributes/.DS_Store
+Assets/Prefab/.DS_Store
+Assets/ProceduralUIImage/.DS_Store
+Assets/Scenes/.DS_Store
+Assets/TutorialInfo/.DS_Store
+Assets/WorldMaterialsFree/.DS_Store
+Packages/.DS_Store
+Packages/com.occasoftware.outline-objects/.DS_Store
