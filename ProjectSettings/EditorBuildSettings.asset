@@ -5,9 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/PrototypePhase/PolishedScene.unity
     guid: 8c8b2e95a15a8cc4782a2b9cd1f2c728
+  - enabled: 1
+    path: Assets/Scenes/HackatonPhase/HackatonV1.unity
+    guid: d0bb0871426788c41a27b18f336cf7f8
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 437907eeea0cb334f8fe49c8c3709e67,
       type: 2}

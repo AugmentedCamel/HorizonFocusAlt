@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
+
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,8 +8,6 @@ public class SFXLauncher : MonoBehaviour
 {
     public List<UnityEvent> SFXEvents;
     public UnityEvent NorthCalibrationEvent;
-    public UnityEvent x;
-
     public UnityEvent soundStartScene;
     public UnityEvent soundPoleSpawn;
     public UnityEvent soundVirtualKeyBoardAppear;
@@ -31,7 +29,47 @@ public class SFXLauncher : MonoBehaviour
     {
         NorthCalibrationEvent.Invoke();
     }
-
+    
+    public void LaunchSoundStartScene()
+    {
+        soundStartScene.Invoke();
+    }
+    
+    public void LaunchSoundPoleSpawn()
+    {
+        soundPoleSpawn.Invoke();
+    }
+    
+    public void LaunchSoundVirtualKeyBoardAppear()
+    {
+        soundVirtualKeyBoardAppear.Invoke();
+    }
+    
+    public void LaunchSoundVirtualKeyboardButton()
+    {
+        soundVirtualKeyboardButton.Invoke();
+    }
+    
+    public void LaunchSoundVirtualKeyBoardDisappear()
+    {
+        soundVirtualKeyBoardDisappear.Invoke();
+    }
+    
+    public void LaunchSoundConfirmLocation()
+    {
+        soundConfirmLocation.Invoke();
+    }
+    
+    public void LaunchSoundSyncController()
+    {
+        soundSyncController.Invoke();
+    }
+    
+    public void LaunchSoundSyncNorth()
+    {
+        soundSyncNorth.Invoke();
+    }
+    
     // Update is called once per frame
     void Update()
     {
