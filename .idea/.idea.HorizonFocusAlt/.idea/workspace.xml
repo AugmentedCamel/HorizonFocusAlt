@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3e9417-b4f2-4a8a-b904-0c0f599983ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Oculus/Voice/Resources/ConduitManifest-26d6e742-7621-4927-b145-7d2304844058.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/Voice/Resources/ConduitManifest-26d6e742-7621-4927-b145-7d2304844058.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/FMOD/Resources/FMODStudioSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,6 +103,7 @@
       <workItem from="1715468605313" duration="465000" />
       <workItem from="1715469165668" duration="1003000" />
       <workItem from="1715499027873" duration="991000" />
+      <workItem from="1715509328393" duration="627000" />
     </task>
     <servers />
   </component>
