@@ -42,6 +42,7 @@ public class GameManager : MonoBehaviour
     {
         _isCoordinated = false;
         _controllerActive.DeactivateAllControllers();
+        _controllerActive.ChangeControllerToActive(0); //closed compass
         _sceneActivator.ActivateObjectsOne();
         Invoke("SetPoleActive", 2); //delay so that the all th scene objecst can spawn?
         _sfxLauncher.LaunchSoundStartScene();
@@ -54,6 +55,7 @@ public class GameManager : MonoBehaviour
     {
         _poleManager.SetPoleActive();
         _sfxLauncher.LaunchSoundPoleSpawn();
+        
     }
     
     public void OnGameCoordinated()
@@ -70,9 +72,10 @@ public class GameManager : MonoBehaviour
     }
     private void StartSyncGame()
     {
+        _controllerActive.ChangeControllerToActive(1); //controller sync
         _sfxLauncher.LaunchSoundSyncControllerAppear();
         _syncronizeGame._syncronizingGame = true;
-        _controllerActive.ChangeControllerToActive(0);
+        
         _sceneActivator.ActivateObjectsTwo();
         
         _signPostController.SpawnSignPostAt(0, "NORTH");
@@ -83,7 +86,7 @@ public class GameManager : MonoBehaviour
     {
         _sfxLauncher.LaunchSoundSyncNorth();
         _sfxLauncher.LaunchSoundSyncControllerDissapear();
-        _controllerActive.ChangeControllerToActive(1);
+        _controllerActive.ChangeControllerToActive(2); //controller aim
         _signPostController.SaveCurrentSignPosts(0); //because north
         StartGame();
         
