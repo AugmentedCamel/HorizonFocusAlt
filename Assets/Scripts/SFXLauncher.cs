@@ -49,7 +49,6 @@ public class SFXLauncher : MonoBehaviour
         soundStartScene.Invoke();
     }
     
-    [Button]
     public void LaunchSoundPoleSpawn()
     {
         Debug.Log("Pole Spawn");
