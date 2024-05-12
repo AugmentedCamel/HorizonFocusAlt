@@ -28265,10 +28265,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1119171892}
-  - component: {fileID: 1119171894}
   - component: {fileID: 1119171893}
   - component: {fileID: 1119171895}
   - component: {fileID: 1119171896}
+  - component: {fileID: 1119171897}
   m_Layer: 0
   m_Name: CenterEyeAnchor
   m_TagString: MainCamera
@@ -28342,14 +28342,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1119171894
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1119171891}
-  m_Enabled: 1
 --- !u!114 &1119171895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28403,6 +28395,19 @@ Skybox:
   m_GameObject: {fileID: 1119171891}
   m_Enabled: 1
   m_CustomSkybox: {fileID: 2100000, guid: fc88f619dd3877e4ba1b2a67ed53ff4f, type: 2}
+--- !u!114 &1119171897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119171891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!43 &1131900499
 Mesh:
   m_ObjectHideFlags: 0
