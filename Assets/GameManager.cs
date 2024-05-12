@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TextMeshPro _totalScoreText;
     [SerializeField] private PassthroughController _passthroughController;
     [SerializeField] private VisualScoreController _visualScoreController;
+    [SerializeField] private SFXLauncher _sfxLauncher;
     
     // Start is called before the first frame update
     public int totalScore = 0;
@@ -43,7 +44,7 @@ public class GameManager : MonoBehaviour
         _controllerActive.DeactivateAllControllers();
         _sceneActivator.ActivateObjectsOne();
         Invoke("SetPoleActive", 2); //delay so that the all th scene objecst can spawn?
-        
+        _sfxLauncher.LaunchSoundStartScene();
         //activate the user input module 
         
     
@@ -52,12 +53,14 @@ public class GameManager : MonoBehaviour
     private void SetPoleActive()
     {
         _poleManager.SetPoleActive();
+        _sfxLauncher.LaunchSoundPoleSpawn();
     }
     
     public void OnGameCoordinated()
     {
         if (!_isCoordinated)
         {
+            _sfxLauncher.LaunchSoundConfirmLocation();
             _isCoordinated = true;
             StartSyncGame();
             _ipadScreensManager.HideInterfaceScreen();
@@ -67,6 +70,7 @@ public class GameManager : MonoBehaviour
     }
     private void StartSyncGame()
     {
+        _sfxLauncher.LaunchSoundSyncControllerAppear();
         _syncronizeGame._syncronizingGame = true;
         _controllerActive.ChangeControllerToActive(0);
         _sceneActivator.ActivateObjectsTwo();
@@ -77,6 +81,8 @@ public class GameManager : MonoBehaviour
     
     public void OnSyncGame()
     {
+        _sfxLauncher.LaunchSoundSyncNorth();
+        _sfxLauncher.LaunchSoundSyncControllerDissapear();
         _controllerActive.ChangeControllerToActive(1);
         _signPostController.SaveCurrentSignPosts(0); //because north
         StartGame();
@@ -103,7 +109,7 @@ public class GameManager : MonoBehaviour
             
             //generating signposts
             _signPostController.SpawnSignPostAt(turnCounter, newTargetstring);
-        
+            _sfxLauncher.LaunchSoundSignPostEnter();
             //calculating the score:
             _desiredAngleController.SetTargetAngle(newTarget);
             
@@ -125,6 +131,16 @@ public class GameManager : MonoBehaviour
             //calculating the score:
             _desiredAngleController.SetTargetAngle(newTarget);
             
+        }else //turncounter is over turns
+        {
+            if (totalScore < 500)
+            {
+                _sfxLauncher.LaunchSoundGameWon();
+            }else
+            {
+                _sfxLauncher.LaunchSoundGameLost();
+            }
+            OnGameOver();
         }
         
         
@@ -145,13 +161,27 @@ public class GameManager : MonoBehaviour
         {
             _ipadScreensManager.SetIpadScreen(_currentIndex);
             _syncronizeGame.SaveCityHorizonTarget((int)score);
+            _sfxLauncher.LaunchSoundPlayerShootHard();
             
+        }else
+        {
+            _sfxLauncher.LaunchSoundPlayerShootEasy();
         }
+        
         
         
         turnCounter++;
         
         AddScore(score);
+        
+        if (score < 10f)
+        {
+            _sfxLauncher.LaunchSoundSuccesfullShot((int)score);
+        }
+        else
+        {
+            _sfxLauncher.LaunchSoundUnsuccesfullShot((int)score);
+        }
         
         //should save the arrow 
         _signPostController.SaveCurrentSignPosts(score);
@@ -174,6 +204,8 @@ public class GameManager : MonoBehaviour
         
         totalScore += scoreaddition;
         
+        _sfxLauncher.LaunchSoundScoreFeedback(totalScore);
+        
         _visualScoreController.SetVisualScore(scoreaddition);
         
         _totalScoreText.text = ("Total Score: " + totalScore.ToString());
@@ -183,6 +215,7 @@ public class GameManager : MonoBehaviour
     public void OnGameOver()
     {
         _isTurn = false;
+        
         _totalScoreText.text = "GAME OVER";
     }
     // Update is called once per frame

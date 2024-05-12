@@ -7,7 +7,6 @@ public class SignPostController : MonoBehaviour
 {
     [SerializeField] List<SignPost> _signPostsA;
     [SerializeField] List<SignPost> _signPostsB;
-    
     [SerializeField] private GameObject _testAim;
     
     private SignPost _currentSignPost;

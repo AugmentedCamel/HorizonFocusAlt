@@ -15,7 +15,8 @@ public class ChatGPTManager : MonoBehaviour
     private List<ChatMessage> _messages = new List<ChatMessage>();
     private string _colorText;
     [SerializeField] private TextMeshPro _answerText;
-
+    [SerializeField] private TextMeshPro _inputText;
+    
     private void Start()
     {
         string apiKey = "";
