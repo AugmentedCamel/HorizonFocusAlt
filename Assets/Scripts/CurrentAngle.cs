@@ -6,7 +6,10 @@ public class CurrentAngle : MonoBehaviour
 {
     [SerializeField] private ControllerDirection _controllerDirection;
     [SerializeField] private Transform _gameNorth;
+    [SerializeField] private SFXLauncher _sfxLauncher;
+    
     public float currentAngle = 0;
+    private float lastEventAngle = 0;
     
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,16 @@ public class CurrentAngle : MonoBehaviour
             if (currentAngle < 0)
             {
                 currentAngle += 360;
+            }
+            
+            // Check if the current angle has passed a multiple of 10 degrees since the last event
+            if (Mathf.Floor(currentAngle / 10) != Mathf.Floor(lastEventAngle / 10))
+            {
+                // Fire the event
+                _sfxLauncher.LaunchControllerTurnsTen(); // Replace with the appropriate event
+
+                // Update the last event angle
+                lastEventAngle = currentAngle;
             }
         }
     }
