@@ -6,17 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8f3e9417-b4f2-4a8a-b904-0c0f599983ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/sign 1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/sign 1.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/sign 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/sign 2.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/OculusRuntimeSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/OculusRuntimeSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/UserInput.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/UserInput.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TargetGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TargetGenerator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Oculus/Voice/Resources/ConduitManifest-26d6e742-7621-4927-b145-7d2304844058.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/Voice/Resources/ConduitManifest-26d6e742-7621-4927-b145-7d2304844058.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_StandaloneWindows.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +104,7 @@
       <workItem from="1715463802857" duration="4549000" />
       <workItem from="1715468605313" duration="465000" />
       <workItem from="1715469165668" duration="1003000" />
+      <workItem from="1715499027873" duration="991000" />
     </task>
     <servers />
   </component>
