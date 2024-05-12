@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -35,8 +35,10 @@ public class SFXLauncher : MonoBehaviour
         soundStartScene.Invoke();
     }
     
+    [Button]
     public void LaunchSoundPoleSpawn()
     {
+        Debug.Log("button pushed for pole spawn");
         soundPoleSpawn.Invoke();
     }
     
