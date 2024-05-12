@@ -2,103 +2,167 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 
 public class AudioManager : MonoBehaviour
 {
    // Singleton instance
    public static AudioManager instance;
-
+   
+   [Header("SCENE AUDIO")]
+   [SerializeField] private AudioSource _atmosphereSource;  // 2D audio atmosphere
+   [SerializeField] private AudioClip _ambientSound;
+   
+   [SerializeField] private AudioSource _sceneAudioSource;
+   [SerializeField] private AudioClip _confirmLocationSound;
+   [SerializeField] private AudioClip _guessEasySound;
+   [SerializeField] private AudioClip _guessHardSound;
+   [SerializeField] private AudioClip _successfulShot;
+   [SerializeField] private AudioClip _unsuccessfulShot;
+   [SerializeField] private AudioClip _scoreFeedback;
+   [SerializeField] private AudioClip _gameLost;
+   [SerializeField] private AudioClip _gameWon;
+   
+   [Space]
+   [Header("POLE")]
+   [SerializeField] private AudioSource _poleSource;
+   [SerializeField] AudioClip _poleSpawnClip;
+   [Space]
+   [Header("KEYBOARD")]
+   [SerializeField] private AudioSource _vKeyboardSource;
+   [SerializeField] private AudioClip _vKeyboardAppear;
+   [SerializeField] private AudioClip _vKeyboardType;
+   [SerializeField] private AudioClip _vKeyboardDisappear;
+   [Space]
+   [Header("CONTROLLER")]
+   [SerializeField] private AudioSource _controllerSource;
+   [SerializeField] private AudioClip _controllerAppear;
+   [SerializeField] private AudioClip _controllerDisappear;
+   [SerializeField] private AudioClip _buttonPressSound;
+   [SerializeField] private AudioClip _controllerTurnClick;
+   [Space]
+   [Header("NORTH")]
+   [SerializeField] private AudioSource _northSource;
+   [SerializeField] private AudioClip _northSyncSound;
+   [Space]
+   [Header("SIGN POST")]
+   [SerializeField] private AudioSource _signPostSource;
+   [SerializeField] private AudioClip _newTargetSound;
+   [SerializeField] private AudioClip _swingSound;
+   [Space]
+   [Header("NARRATION")]
    // Dedicated AudioSource for narration
-   private AudioSource _narrationSource;
-
-   // Struct to hold sound clips with their names
-   [Serializable]
-   public class SoundClip
+   [SerializeField] private AudioSource _narrationSource;
+   [SerializeField] AudioClip[] _narrationClips;  // Audio clips for Narration
+   
+   
+   public void ScoreFeedbackSound()
    {
-      public string name;
-      public AudioClip clip;
+      _sceneAudioSource.PlayOneShot(_scoreFeedback);  //  Score feedback to be integrated with ScoreManager?
    }
 
-   // Audio clips for SFX, Narration, and UI sounds
-   public SoundClip[] sfxClips;
-   public SoundClip[] narrationClips;
-   public SoundClip[] uiClips;
-
-   void Awake()
+   public void ControllerTurnsClick()   // Further logic may be needed to connect to the game mechanics
    {
-      // Ensure there is only one instance of AudioManager
-      if (instance == null)
-      {
-         instance = this;
-         DontDestroyOnLoad(gameObject);
-      }
-      else
-      {
-         Destroy(gameObject);
-      }
+      _controllerSource.PlayOneShot(_controllerTurnClick);
+   }
 
-      // Initialize the narration audio source
-      _narrationSource = gameObject.AddComponent<AudioSource>();
-      _narrationSource.loop = false;  // Narration typically doesn't loop
+   public void GameWonSound()  // Indicates game has been won.
+   {
+      _sceneAudioSource.PlayOneShot(_gameWon);
+   }
+   
+   public void GameLostSound()      // Indicates game has been lost.
+   {
+      _sceneAudioSource.PlayOneShot(_gameLost);
    }
 
    // Play a SFX from a specific GameObject
-   public void PlaySFX(string name, GameObject sourceObject)
-   {
-      AudioSource source = sourceObject.GetComponent<AudioSource>();
-      if (source == null)
-      {
-         source = sourceObject.AddComponent<AudioSource>();
-      }
 
-      AudioClip clip = FindClip(name, sfxClips);
-      if (clip != null)
-      {
-         source.PlayOneShot(clip);
-      }
+   public void PlayAmbientSound()  // Play ambient atmosphere sound 
+   {
+      _atmosphereSource.PlayOneShot(_ambientSound);
+   }
+
+   public void PoleSpawnSound()  // Pole spawn Sound
+   {
+      _poleSource.PlayOneShot(_poleSpawnClip);
+   }
+
+   public void ConfrimLocationSound()  //  Location confirmed sound.
+   {
+      _sceneAudioSource.PlayOneShot(_confirmLocationSound);
+   }
+
+   public void ControllerAppearSound()  // Controller appears
+   {
+      _controllerSource.PlayOneShot(_controllerAppear);
+   }
+
+   public void ControllerDisappearSound()  // Controller disappears
+   {
+      _controllerSource.PlayOneShot(_controllerDisappear);
    }
    
-   // Play a UI sound from a specific GameObject
-   public void PlayUISound(string name, GameObject sourceObject)
+   public void KeyboardAppearSound()  // Keyboard appears
    {
-      AudioSource source = sourceObject.GetComponent<AudioSource>();
-      if (source == null)
-      {
-         source = sourceObject.AddComponent<AudioSource>();
-      }
-
-      AudioClip clip = FindClip(name, uiClips);
-      if (clip != null)
-      {
-         source.PlayOneShot(clip);
-      }
+      _vKeyboardSource.PlayOneShot(_vKeyboardAppear);
    }
+   
+   public void KeyboardTypeSound()  // keyboard typing
+   {
+      _vKeyboardSource.PlayOneShot(_vKeyboardType);
+   }
+   
+   public void KeyboardDisappearSound() // Keyboard disappears
+   {
+      _vKeyboardSource.PlayOneShot(_vKeyboardDisappear);
+   }
+
+   public void NorthSyncSound() // North Sync sound
+   {
+      _northSource.PlayOneShot(_northSyncSound);
+   }
+
+   public void SignPostEnterSound()  // Sign post Enter
+   {
+      _signPostSource.PlayOneShot(_newTargetSound);
+   }
+   
+   public void SignPostSwingSound()   //  Sign post Swing
+   {
+      _signPostSource.PlayOneShot(_swingSound);
+   }
+
+   public void GuessEasySound()  // Guess EASY
+   {
+      _sceneAudioSource.PlayOneShot(_guessEasySound);
+   }
+   
+   public void GuessHardSound()   // Guess HARD
+   {
+      _sceneAudioSource.PlayOneShot(_guessHardSound);
+   }
+
+   public void SuccessSound()   // Success
+   {
+      _sceneAudioSource.PlayOneShot(_successfulShot);
+   }
+   
+   public void UnsuccessSound()   // Unsuccessful
+   {
+      _sceneAudioSource.PlayOneShot(_unsuccessfulShot);
+   }
+   
+   
+   
+   
 
    // Play narration (from the centralized audio source)
-   public void PlayNarration(string name)
-   {
-      AudioClip clip = FindClip(name, narrationClips);
-      if (clip != null)
-      {
-         _narrationSource.clip = clip;
-         _narrationSource.Play();
-      }
-   }
+  
 
    // Find an AudioClip by name from the specified array
-   private AudioClip FindClip(string name, SoundClip[] clips)
-   {
-      foreach (SoundClip sc in clips)
-      {
-         if (sc.name == name)
-         {
-            return sc.clip;
-         }
-      }
-      Debug.LogWarning("Sound clip not found: " + name);
-      return null;
-   }
+  
 }
    
 
