@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Model: 0
   CompletionUrl: https://api.openai.com/v1/chat/completions
-  PrivateApiKey: sk-proj-sdfa
-  Organization: asdfasd
+  PrivateApiKey: asdfasd
+  Organization: asdf

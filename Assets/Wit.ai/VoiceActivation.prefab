@@ -61,8 +61,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnChatGPTCoordinateResponse:
     m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: CoordinateController, Assembly-CSharp
+        m_MethodName: SaveLocationFromInput
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnChatGPTCoordinateResponseFailure:
+    m_PersistentCalls:
       m_Calls: []
   _answerText: {fileID: 1934142436391453909}
+  _inputText: {fileID: 5788830588031250092}
 --- !u!1 &912458567677432720
 GameObject:
   m_ObjectHideFlags: 0
@@ -75,7 +91,7 @@ GameObject:
   - component: {fileID: 68934571048599400}
   - component: {fileID: 1934142436391453909}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: CoordinateResponseText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -433,7 +449,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8668164419515387360}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -567,6 +583,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dictation: {fileID: 8721241990262728354}
+  CityUpdate:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7238041049473531524}
+        m_TargetAssemblyTypeName: ChatGPTManager, Assembly-CSharp
+        m_MethodName: UpdateCoordinates
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2625156525292092235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -579,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b575fc36cdeb6f6468f240a6b8850c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  witDictation: {fileID: 0}
+  witDictation: {fileID: 8721241990262728354}
   linesBetweenActivations: 2
   activationSeparator: 
   onTranscriptionUpdated:

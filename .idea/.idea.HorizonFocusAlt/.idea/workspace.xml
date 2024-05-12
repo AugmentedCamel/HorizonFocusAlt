@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="8f3e9417-b4f2-4a8a-b904-0c0f599983ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/SpawnTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/SpawnTile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ChatGPTForGames/GPTAuth.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ChatGPTForGames/GPTAuth.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CurrentAngle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CurrentAngle.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SFXLauncher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SFXLauncher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SignPostController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SignPostController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CoordinateController/CoordinateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CoordinateController/CoordinateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wit.ai/ChatGPTManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wit.ai/ChatGPTManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wit.ai/DictationActivationCustom.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wit.ai/DictationActivationCustom.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wit.ai/VoiceActivation.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wit.ai/VoiceActivation.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +111,7 @@
       <workItem from="1715468605313" duration="465000" />
       <workItem from="1715469165668" duration="1003000" />
       <workItem from="1715499027873" duration="991000" />
-      <workItem from="1715509328393" duration="4307000" />
+      <workItem from="1715509328393" duration="11933000" />
     </task>
     <servers />
   </component>

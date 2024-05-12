@@ -1,11 +1,13 @@
 using System;
 using NaughtyAttributes;
+using TMPro;
 using UnityEngine;
 
 public class CoordinateController : MonoBehaviour
 {
     [SerializeField] private Vector2 _savedLocation; // Stores the saved geographic location
 
+    [SerializeField] private TextMeshPro _inputCoordinates;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,7 +30,11 @@ public class CoordinateController : MonoBehaviour
     private void CalculateBearingToDummeyLocation()
     {
         CalculateBearingToNewLocation("48.8575, -255.3514");
-        
+    }
+    
+    public void SaveLocationFromInput() //this method gets called after dictaion input and succesfull parsing with GPT to coordinates
+    {
+        SaveLocation(_inputCoordinates.text);
     }
     /// <summary>
     /// Saves a given location as latitude and longitude.
@@ -84,6 +90,30 @@ public class CoordinateController : MonoBehaviour
         {
             Debug.LogError($"Error parsing coordinate '{coordinate}': {ex.Message}");
             return null;
+        }
+    }
+    
+    public bool IsCoordinateValid(string coordinate)
+    {
+        try
+        {
+            string[] parts = coordinate.Split(',');
+            if (parts.Length != 2)
+            {
+                return false;
+            }
+            double latitude = double.Parse(parts[0]);
+            double longitude = double.Parse(parts[1]);
+            if (latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180)
+            {
+                return false;
+            }
+            return true;
+        }
+        catch (Exception ex)
+        {
+            Debug.Log($"Error parsing coordinate '{coordinate}': {ex.Message}");
+            return false;
         }
     }
 

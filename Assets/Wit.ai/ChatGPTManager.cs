@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.Events;
 using OpenAI;
@@ -9,8 +10,11 @@ using Unity.VisualScripting;
 
 public class ChatGPTManager : MonoBehaviour
 {
-    
+
     public UnityEvent OnChatGPTCoordinateResponse;
+
+    public UnityEvent OnChatGPTCoordinateResponseFailure;
+    
     private OpenAIApi _openAI;
     private List<ChatMessage> _messages = new List<ChatMessage>();
     private string _colorText;
@@ -65,6 +69,38 @@ public class ChatGPTManager : MonoBehaviour
 
     }
     
+    [Button]
+    public void UpdateCoordinates() //gets called after a delay from voice activation toggle this actites teh chat gpt
+    {
+        if (_inputText.text.Length > 3)
+        {
+            AskChatGPTCoordinates(_inputText.text);
+            Debug.Log("updating coordinates for + " + _inputText.text);
+            
+        }
+    }
+    
+    private void ReceivedCoordinate (string coordinate)
+    {
+        _answerText.text = coordinate;
+        Debug.Log("Received coordinate: " + coordinate);
+        OnChatGPTCoordinateResponse?.Invoke(); //this event is listened by the voice activation to try and parse it and passtrhough if good
+    }
+
+    public void GetUserInputText()
+    {
+        //gets invoked 5 seconds after voice acitvation toggle
+        string textToChck = _inputText.text;
+        if (textToChck.Length > 3)
+        {
+            AskChatGPTCoordinates(textToChck);
+        }
+        else
+        {
+            OnChatGPTCoordinateResponseFailure?.Invoke();
+        }
+    }
+    
     public async void AskChatGPTCoordinates(string newText)
     {
         //user message
@@ -96,8 +132,8 @@ public class ChatGPTManager : MonoBehaviour
             _messages.Add(chatResponse);
 
             Debug.Log(chatResponse.Content);
-            SetColorText(chatResponse.Content);
-            OnChatGPTCoordinateResponse?.Invoke();
+            
+            ReceivedCoordinate(chatResponse.Content);
             
             
         }
