@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8f3e9417-b4f2-4a8a-b904-0c0f599983ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/_Ola/PocketCompassClosed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/_Ola/PocketCompassClosed.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/_Ola/PocketCompassOpen.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/_Ola/PocketCompassOpen.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefab/_Ola/PocketCompassSynced.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/_Ola/PocketCompassSynced.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +102,7 @@
       <workItem from="1715468605313" duration="465000" />
       <workItem from="1715469165668" duration="1003000" />
       <workItem from="1715499027873" duration="991000" />
-      <workItem from="1715509328393" duration="17354000" />
+      <workItem from="1715509328393" duration="17962000" />
     </task>
     <servers />
   </component>
