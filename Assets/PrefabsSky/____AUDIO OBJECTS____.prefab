@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _atmosphereSource: {fileID: 3977159795850799481}
-  _ambientSound: {fileID: 0}
+  _ambientSound: {fileID: 8300000, guid: ea32188c274604c4bb21daa032a07cb3, type: 3}
   _sceneAudioSource: {fileID: 4998232455144550009}
   _confirmLocationSound: {fileID: 8300000, guid: 4d7c14aa0456e5441952d7614356643c,
     type: 3}
@@ -200,7 +200,21 @@ MonoBehaviour:
   _newTargetSound: {fileID: 8300000, guid: b95bb390b1f03044b975a588161f959a, type: 3}
   _swingSound: {fileID: 8300000, guid: 7403a9c4cbae1b144a0fa8b1af8e8da8, type: 3}
   _narrationSource: {fileID: 8530230323740540566}
-  _narrationClips: []
+  _narrationClips:
+  - {fileID: 8300000, guid: 418048144469c1b4fa375189a7c61f7c, type: 3}
+  - {fileID: 8300000, guid: 11bc47f96aaa4644ea4e682f55b5bedc, type: 3}
+  - {fileID: 8300000, guid: 9925d607858eda242b8d84031ac72d39, type: 3}
+  - {fileID: 8300000, guid: 2b09463c231a2dc4bb576a0353f0f95a, type: 3}
+  - {fileID: 8300000, guid: fdc1def45e0bb384bb93ffe4546391be, type: 3}
+  - {fileID: 8300000, guid: 1c0c523a44ba3cb41bc8523c88bea4f1, type: 3}
+  - {fileID: 8300000, guid: f0b9c453a8b36574093fce97a5a1fac9, type: 3}
+  - {fileID: 8300000, guid: c0308f3dc2d48c843b1bfedec91dcad1, type: 3}
+  - {fileID: 8300000, guid: bacc99986c02c564292612aaaf438715, type: 3}
+  - {fileID: 8300000, guid: 93efe1586a660d44ebae20c7a8be6215, type: 3}
+  - {fileID: 8300000, guid: 613bb0b545350ca44a56a55aa0ef26e6, type: 3}
+  - {fileID: 8300000, guid: 66c722cf37ffe594b9090611f2b7c2f7, type: 3}
+  - {fileID: 8300000, guid: 17e7ee1fe97ab444aa5a4fad2ff5a48d, type: 3}
+  - {fileID: 8300000, guid: 9a11bbc76e840b84391cabfcd9eb3083, type: 3}
 --- !u!1 &3880668292735642890
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,10 +846,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2163727612386591550, guid: 5b67ef4dfe5017f45a33410c0dcfa32d,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -955,7 +969,7 @@ Transform:
   - {fileID: 6702503655786992744}
   - {fileID: 2806546662105119736}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6167230025305010231
 GameObject:
@@ -1175,7 +1189,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0

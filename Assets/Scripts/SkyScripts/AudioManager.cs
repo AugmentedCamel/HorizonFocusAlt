@@ -51,6 +51,25 @@ public class AudioManager : MonoBehaviour
    [SerializeField] AudioClip[] _narrationClips;  // Audio clips for Narration
    
    
+   // Play narration (from the centralized audio source)
+   public void PlayNarrationClip(int clipIndex)
+   {
+      if (clipIndex < 0 || clipIndex >= _narrationClips.Length)
+      {
+         Debug.LogError("Clip index out of range.");
+         return;
+      }
+
+      // Stop the current narration if it is playing
+      if (_narrationSource.isPlaying)
+      {
+         _narrationSource.Stop();
+      }
+
+      _narrationSource.PlayOneShot(_narrationClips[clipIndex]);
+   }
+   
+   
    public void ScoreFeedbackSound()
    {
       _sceneAudioSource.PlayOneShot(_scoreFeedback, 0.7f);  //  Score feedback to be integrated with ScoreManager?
@@ -133,16 +152,8 @@ public class AudioManager : MonoBehaviour
    {
       _sceneAudioSource.PlayOneShot(_unsuccessfulShot, 0.5f);
    }
-   
-   
-   
-   
 
-   // Play narration (from the centralized audio source)
-  
-
-   // Find an AudioClip by name from the specified array
-  
+   
 }
    
 
