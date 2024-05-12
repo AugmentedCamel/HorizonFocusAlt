@@ -23,10 +23,10 @@ public class ChatGPTManager : MonoBehaviour
     
     private void Start()
     {
-        string apiKey = "";
+        string apiKey = "sk-proj-AjYBca9p3gHdYXdVeSn8T3BlbkFJSDTkz08OLxk07WntceA3";
         //Debug.Log(apiKey);
         //string apiKey = Config.OpenAI_API_Key;
-        string organizationId = "";
+        string organizationId = "org-ZqH8L0bXCz0zZwbTIipVdGNt";
        
         _openAI = new OpenAIApi(apiKey, organizationId);
 

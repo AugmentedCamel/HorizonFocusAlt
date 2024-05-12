@@ -12,7 +12,8 @@ public class DictationActivationCustom : MonoBehaviour
     [SerializeField] private DictationService _dictation;
     [SerializeField] private TextMeshPro _lastCoordinates;
     [SerializeField] private CoordinateController _coordinateController;
-
+    [SerializeField] private TargetGenerator _targetGenerator;
+    
     public UnityEvent secondsAfterActivation;
     public UnityEvent onInvalidInput;
     public UnityEvent onValidCoordinateUpdate;
@@ -50,6 +51,7 @@ public class DictationActivationCustom : MonoBehaviour
         if (_coordinateController.IsCoordinateValid(_lastCoordinates.text))
         {
             onValidCoordinateUpdate.Invoke();
+            _targetGenerator.OnPlayerInput(_lastCoordinates.text);
         }
         else
         {
