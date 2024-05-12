@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class SignPost : MonoBehaviour
 {
-    [SerializeField] private Renderer _renderer;
+    
     
     [SerializeField] private List<TextMeshPro> _signPostTexts;
     [SerializeField] private ControllerDirection _controllerDirection;
 
-    [SerializeField] private Material _materialAiming;
-    [SerializeField] private Material _materialShot;
+    
 
     [SerializeField] private GameObject _CorrectArrow;
     [SerializeField] private GameObject _ShotArrow;
@@ -44,7 +43,7 @@ public class SignPost : MonoBehaviour
         _AimingAt = true;
         _isSaved = false;
         SetNewText(text);
-        _renderer.material = _materialAiming;
+        
     }
     
     public void SetText(string text)
@@ -64,7 +63,7 @@ public class SignPost : MonoBehaviour
         if (_CorrectArrow != null)
         {
             _CorrectArrow.SetActive(true);
-            _ShotArrow.SetActive(false);
+            //_ShotArrow.SetActive(false);
             _CorrectArrow.transform.localRotation = Quaternion.Euler(0, angle, 0);
         }
     }
@@ -72,7 +71,7 @@ public class SignPost : MonoBehaviour
     public void Save(float correctLocalAngle) 
     {
         _isSaved = true;
-        _renderer.material = _materialShot;
+        
         ActivateCorrectArrow(correctLocalAngle);
         //should activate the correct arrow later
         

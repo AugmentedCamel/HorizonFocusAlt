@@ -6,6 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="8f3e9417-b4f2-4a8a-b904-0c0f599983ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 1.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 1.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA 4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/OutlineA.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SignPostBackground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/SignPostBackground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefab/PrefabVariants/StartPole Variant 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefab/PrefabVariants/StartPole Variant 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SignPost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SignPost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_UI/iOS Font Asset/SF-Pro-Text-Regular SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_UI/iOS Font Asset/SF-Pro-Text-Regular SDF.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.occasoftware.outline-objects/Samples/Demo/Materials/OutlineExamples/M_Outline 2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.occasoftware.outline-objects/Samples/Demo/Materials/OutlineExamples/M_Outline 2.mat" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +121,7 @@
       <workItem from="1715468605313" duration="465000" />
       <workItem from="1715469165668" duration="1003000" />
       <workItem from="1715499027873" duration="991000" />
-      <workItem from="1715509328393" duration="17962000" />
+      <workItem from="1715509328393" duration="20050000" />
     </task>
     <servers />
   </component>

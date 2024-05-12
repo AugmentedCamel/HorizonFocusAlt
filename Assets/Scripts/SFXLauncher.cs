@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class SFXLauncher : MonoBehaviour
 {
-    
+    [SerializeField] private AudioManager _audioManager;
     
     public UnityEvent soundStartScene;
     public UnityEvent soundPoleSpawn;
@@ -47,6 +47,7 @@ public class SFXLauncher : MonoBehaviour
     {
         Debug.Log("Launch StartScene Sound");
         soundStartScene.Invoke();
+        
     }
     
     public void LaunchSoundPoleSpawn()
