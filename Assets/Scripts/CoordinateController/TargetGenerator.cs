@@ -73,6 +73,22 @@ public class TargetGenerator : MonoBehaviour
         return _targetAngles[newIndex];
     }
 
+    public float GenerateTargetWest()
+    {
+        int newIndex = 6; 
+        currentTarget = _targets[newIndex];
+        currentTargetIndex = newIndex;
+        return _targetAngles[newIndex];
+    }
+    
+    public float GenerateTargetEast()
+    {
+        int newIndex = 2; 
+        currentTarget = _targets[newIndex];
+        currentTargetIndex = newIndex;
+        return _targetAngles[newIndex];
+    }
+    
     public float GenerateTargetCity()
     {
         int newIndex = Random.Range(0, _cityTargets.Count);

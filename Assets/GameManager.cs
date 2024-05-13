@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PassthroughController _passthroughController;
     [SerializeField] private VisualScoreController _visualScoreController;
     [SerializeField] private SFXLauncher _sfxLauncher;
+    [SerializeField] private DialogueEventManager _dialogueEventManager;
+    
+    
     
     // Start is called before the first frame update
     public int totalScore = 0;
@@ -46,6 +49,7 @@ public class GameManager : MonoBehaviour
         _sceneActivator.ActivateObjectsOne();
         Invoke("SetPoleActive", 2); //delay so that the all th scene objecst can spawn?
         _sfxLauncher.LaunchSoundStartScene();
+        
         //activate the user input module 
         
     
@@ -55,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         _poleManager.SetPoleActive();
         _sfxLauncher.LaunchSoundPoleSpawn();
+        _dialogueEventManager.OnStartOfGame();
         
     }
     
@@ -66,6 +71,7 @@ public class GameManager : MonoBehaviour
             _isCoordinated = true;
             StartSyncGame();
             _ipadScreensManager.HideInterfaceScreen();
+            
         }
         
         
@@ -74,6 +80,7 @@ public class GameManager : MonoBehaviour
     {
         _controllerActive.ChangeControllerToActive(1); //controller sync
         _sfxLauncher.LaunchSoundSyncControllerAppear();
+        _dialogueEventManager.OnGrabPhone();
         _syncronizeGame._syncronizingGame = true;
         
         _sceneActivator.ActivateObjectsTwo();
@@ -86,6 +93,7 @@ public class GameManager : MonoBehaviour
     {
         _sfxLauncher.LaunchSoundSyncNorth();
         _sfxLauncher.LaunchSoundSyncControllerDissapear();
+        _dialogueEventManager.OnNorthSynchronized();
         _controllerActive.ChangeControllerToActive(2); //controller aim
         _signPostController.SaveCurrentSignPosts(0); //because north
         StartGame();
@@ -96,6 +104,7 @@ public class GameManager : MonoBehaviour
     {
         turnCounter = 1; // turn 0 is for syncing the north
         _sceneActivator.ActivateObjectsThree();
+        
         Invoke("NewTurn", 2);
         
     }
@@ -105,7 +114,31 @@ public class GameManager : MonoBehaviour
         _isTurn = true;
         _passthroughController.SetPasstroughToAimMode();
         //generating targets
-        if (turnCounter < 4) // should have easy targets
+        if (turnCounter == 1) //first turn shoul dask west 
+        {
+            _dialogueEventManager.OnStartWarmingUp();
+            //get west target
+            float newTarget = _targetGenerator.GenerateTargetWest();
+            string newTargetstring = _targetGenerator.currentTarget;
+            
+            _signPostController.SpawnSignPostAt(turnCounter, newTargetstring);
+            _sfxLauncher.LaunchSoundSignPostEnter();
+            //calculating the score:
+            _desiredAngleController.SetTargetAngle(newTarget);
+        }
+        else if(turnCounter == 2) //second turn should ask east
+        {
+            _dialogueEventManager.OnArrowEast();
+            float newTarget = _targetGenerator.GenerateTargetEast();
+            string newTargetstring = _targetGenerator.currentTarget;
+            
+            _signPostController.SpawnSignPostAt(turnCounter, newTargetstring);
+            _sfxLauncher.LaunchSoundSignPostEnter();
+            //calculating the score:
+            _desiredAngleController.SetTargetAngle(newTarget);
+            //get east target
+        }
+        else if(turnCounter < 4) // should have easy targets
         {
             float newTarget = _targetGenerator.GenerateTarget();
             string newTargetstring = _targetGenerator.currentTarget;
@@ -113,6 +146,25 @@ public class GameManager : MonoBehaviour
             //generating signposts
             _signPostController.SpawnSignPostAt(turnCounter, newTargetstring);
             _sfxLauncher.LaunchSoundSignPostEnter();
+            //calculating the score:
+            _desiredAngleController.SetTargetAngle(newTarget);
+            
+        }
+        else if (turnCounter == 4) //should introduce cities
+        {
+            _dialogueEventManager.OnBeginCities();
+            float newTarget = _targetGenerator.GenerateTargetCity();
+            string newTargetstring = _targetGenerator.currentTarget;
+            
+            //generating signposts
+            _signPostController.SpawnSignPostAt(turnCounter, newTargetstring);
+            
+            //get the screenindex
+            _currentIndex = _targetGenerator.currentTargetIndex;
+            
+            //activate the horizon object
+            _syncronizeGame.SetCityHorizonTarget(_currentIndex);
+            
             //calculating the score:
             _desiredAngleController.SetTargetAngle(newTarget);
             
@@ -138,10 +190,12 @@ public class GameManager : MonoBehaviour
         {
             if (totalScore < 500)
             {
+                _dialogueEventManager.OnGameWon();
                 _sfxLauncher.LaunchSoundGameWon();
             }else
             {
                 _sfxLauncher.LaunchSoundGameLost();
+                _dialogueEventManager.OnGameLost();
             }
             OnGameOver();
         }
@@ -180,10 +234,12 @@ public class GameManager : MonoBehaviour
         if (score < 10f)
         {
             _sfxLauncher.LaunchSoundSuccesfullShot((int)score);
+            _dialogueEventManager.OnFeedbackPositive();
         }
         else
         {
             _sfxLauncher.LaunchSoundUnsuccesfullShot((int)score);
+            _dialogueEventManager.OnFeedbackNegative();
         }
         
         //should save the arrow 
