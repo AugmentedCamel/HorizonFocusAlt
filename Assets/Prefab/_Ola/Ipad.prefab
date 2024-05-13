@@ -1060,6 +1060,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: iPad Screen Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 127635644881599053, guid: f9c36cc2ff695e546be6ef62d0176363,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1392228426490133447, guid: f9c36cc2ff695e546be6ef62d0176363,
         type: 3}
       propertyPath: m_Pivot.x

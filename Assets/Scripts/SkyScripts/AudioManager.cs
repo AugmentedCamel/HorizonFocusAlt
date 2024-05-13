@@ -129,7 +129,7 @@ public class AudioManager : MonoBehaviour
 
    public void ControllerTurnsClick()   // Further logic may be needed to connect to the game mechanics
    {
-      _controllerSource.PlayOneShot(_controllerTurnClick, 0.45f);
+      _controllerSource.PlayOneShot(_controllerTurnClick, 0.30f);
    }
 
    public void GameWonSound()  // Indicates game has been won.
