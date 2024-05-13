@@ -20,7 +20,7 @@ public class DictationActivationCustom : MonoBehaviour
     private bool _isActive = false;
     
     // Start is called before the first frame update
-    
+   
     
     public void ToggleActivation()
     {
@@ -33,6 +33,7 @@ public class DictationActivationCustom : MonoBehaviour
         {
             _dictation.Activate();
             Invoke("PassToGPT", 5); //this waits for the user to give input
+            Invoke("ReadVoiceResponse", 15); //time out
             _isActive = true;
         }
     }
@@ -47,6 +48,7 @@ public class DictationActivationCustom : MonoBehaviour
     
     public void ReadVoiceResponse()
     {
+        StopAllCoroutines();
         Debug.Log("reading response");
         if (_coordinateController.IsCoordinateValid(_lastCoordinates.text))
         {

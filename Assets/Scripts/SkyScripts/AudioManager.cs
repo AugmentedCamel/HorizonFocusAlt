@@ -79,15 +79,10 @@ public class AudioManager : MonoBehaviour
          Debug.LogError("Clip index out of range.");
          return;
       }
+      
+      PlayClipImmediately(clipIndex);
 
-      if (clipIndex == 0)
-      {
-         PlayClipImmediately(clipIndex);
-      }
-      else
-      {
-         StartCoroutine(DelayedPlay(clipIndex));
-      }
+      
    }
 
    private void PlayClipImmediately(int clipIndex)

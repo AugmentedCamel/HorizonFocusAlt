@@ -23,9 +23,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private VisualScoreController _visualScoreController;
     [SerializeField] private SFXLauncher _sfxLauncher;
     [SerializeField] private DialogueEventManager _dialogueEventManager;
-
+    [SerializeField] private DictationActivationCustom _dictationActivationCustom;
+    
     [SerializeField] private GameObject _horizonFocusTarget;
     
+    [SerializeField] private TMP_Text _totalSoreText;
+    [SerializeField] private TMP_Text _roundScoreText;
     
     // Start is called before the first frame update
     public int totalScore = 0;
@@ -34,6 +37,7 @@ public class GameManager : MonoBehaviour
     private bool _isTurn = false;
     private float _correctAngle;
     private int _currentIndex;
+    
     void Start()
     {
         
@@ -62,7 +66,34 @@ public class GameManager : MonoBehaviour
         _poleManager.SetPoleActive();
         _sfxLauncher.LaunchSoundPoleSpawn();
         _dialogueEventManager.OnStartOfGame();
+        Invoke("ListenToUserInputAfterTime", 10);
         
+    }
+
+    private void ListenToUserInputAfterTime()
+    {
+        _dictationActivationCustom.ToggleActivation(); //set on
+        Debug.Log("listening to user input");
+    }
+    
+    public void OnSuccesfullCoordinatesEntry()
+    {
+        //should continue the game and 
+        Debug.Log("succesfull entry");
+        _dictationActivationCustom.ToggleActivation(); //set off
+        OnGameCoordinated();
+    }
+    
+    public void OnFailedCoordinatesEntry()
+    {
+        if (_isCoordinated)
+        {
+            return; //should only be executed if the game is not coordinated yet
+        }
+        _dictationActivationCustom.ToggleActivation(); //set offf
+        //should ask to retry
+        _dialogueEventManager.OnInputCityRetry();
+        Invoke("ListenToUserInputAfterTime", 5f); 
     }
     
     public void OnGameCoordinated()
@@ -89,13 +120,8 @@ public class GameManager : MonoBehaviour
         
         _signPostController.SpawnSignPostAt(0, "NORTH");
         
-    }
-
-    public void OnSuccesfullCoordinatesEntry()
-    {
-        //should continue the game and 
+        //start listening to voice input
         
-        OnSyncGame();
     }
     
     public void OnSyncGame()
@@ -275,11 +301,16 @@ public class GameManager : MonoBehaviour
         
         _sfxLauncher.LaunchSoundScoreFeedback(totalScore);
         
-        _visualScoreController.SetVisualScore(scoreaddition);
         
-        _totalScoreText.text = ("Total Score: " + totalScore.ToString());
+        
+        _roundScoreText.text = (scoreaddition.ToString());
+        _totalSoreText.text = (totalScore.ToString());
+        
+        
         
     }
+    
+    
 
     
     public void OnGameOver()
