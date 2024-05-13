@@ -52,7 +52,25 @@ public class AudioManager : MonoBehaviour
    [SerializeField] AudioClip[] _narrationClips;  // Audio clips for Narration
    
    
-   // Play narration (from the centralized audio source)
+   // // Play narration (from the centralized audio source)
+   // public void PlayNarrationClip(int clipIndex)
+   // {
+   //    if (clipIndex < 0 || clipIndex >= _narrationClips.Length)
+   //    {
+   //       Debug.LogError("Clip index out of range.");
+   //       return;
+   //    }
+   //
+   //    // Stop the current narration if it is playing
+   //    if (_narrationSource.isPlaying)
+   //    {
+   //       _narrationSource.Stop();
+   //    }
+   //
+   //    _narrationSource.PlayOneShot(_narrationClips[clipIndex]);
+   //    BirdIsTalking();
+   // }
+   
    public void PlayNarrationClip(int clipIndex)
    {
       if (clipIndex < 0 || clipIndex >= _narrationClips.Length)
@@ -61,7 +79,30 @@ public class AudioManager : MonoBehaviour
          return;
       }
 
-      // Stop the current narration if it is playing
+      if (clipIndex == 0)
+      {
+         PlayClipImmediately(clipIndex);
+      }
+      else
+      {
+         StartCoroutine(DelayedPlay(clipIndex));
+      }
+   }
+
+   private void PlayClipImmediately(int clipIndex)
+   {
+      if (_narrationSource.isPlaying)
+      {
+         _narrationSource.Stop();
+      }
+
+      _narrationSource.PlayOneShot(_narrationClips[clipIndex]);
+      BirdIsTalking();
+   }
+   private IEnumerator DelayedPlay(int clipIndex)
+   {
+      yield return new WaitForSeconds(2f);  // Wait for 2 seconds
+
       if (_narrationSource.isPlaying)
       {
          _narrationSource.Stop();
@@ -107,7 +148,7 @@ public class AudioManager : MonoBehaviour
 
    public void PlayAmbientSound()  // Play ambient atmosphere sound 
    {
-      _atmosphereSource.PlayOneShot(_ambientSound, 0.5f);
+      _atmosphereSource.PlayOneShot(_ambientSound, 0.15f);
    }
 
    public void PoleSpawnSound()  // Pole spawn Sound
