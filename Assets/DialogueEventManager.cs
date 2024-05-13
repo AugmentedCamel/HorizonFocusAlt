@@ -5,23 +5,26 @@ using UnityEngine;
 public class DialogueEventManager : MonoBehaviour
 {
     [SerializeField] private AudioManager _audioManager;
-    
+    [SerializeField] private IpadScreenManager _ipadScreenManager;
     public void OnStartOfGame()
     {
         //index 0 after seconds
         Invoke("StartGameAfterSeconds", 3);
+        _ipadScreenManager.ToggleIpadScreen("Welcome");
     }
     
     private void StartGameAfterSeconds()
     {
         _audioManager.PlayNarrationClip(0);
         Invoke("OnInputCityOne", 2);
+        
     }
 
     public void OnInputCityOne()
     {
         //index 1 ask to input city one
         _audioManager.PlayNarrationClip(1);
+        _ipadScreenManager.ToggleIpadScreen("LiveLocation");
     }
     
     public void OnInputCityRetry()
@@ -34,6 +37,7 @@ public class DialogueEventManager : MonoBehaviour
     {
         //index 3 after succesfull city input ask to grab phone and open compass app
         _audioManager.PlayNarrationClip(3);
+        _ipadScreenManager.ToggleIpadScreen("Syncronize");
     }
     
     
@@ -47,6 +51,7 @@ public class DialogueEventManager : MonoBehaviour
     {
         //index 6 ask to point at west
         _audioManager.PlayNarrationClip(6);
+        _ipadScreenManager.ToggleIpadScreen("WarmingUp");
     }
     
     public void OnArrowEast()
@@ -59,6 +64,7 @@ public class DialogueEventManager : MonoBehaviour
     {
         //index 11 to start with cities
         _audioManager.PlayNarrationClip(11);
+        _ipadScreenManager.ToggleIpadScreen("City");
     }
     
     public void OnFeedbackPositive()

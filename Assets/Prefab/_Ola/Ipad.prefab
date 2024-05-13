@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5860117622532888484}
-  - component: {fileID: 9076769744333404524}
+  - component: {fileID: 6687213946633790806}
   m_Layer: 0
   m_Name: Ipad
   m_TagString: Untagged
@@ -276,9 +276,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2155146316799246279}
-  m_LocalRotation: {x: -0, y: 0.7933541, z: -0.6087604, w: 0}
+  m_LocalRotation: {x: 0, y: 0.7933534, z: -0.60876137, w: 0}
   m_LocalPosition: {x: 0.003, y: 1.031, z: -0.443}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.88910145, y: 0.8891017, z: 0.8891016}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 110346401307817666}
@@ -288,8 +288,8 @@ Transform:
   - {fileID: 4651048401767424475}
   m_Father: {fileID: 0}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 75, y: 0, z: 0}
---- !u!114 &9076769744333404524
+  m_LocalEulerAnglesHint: {x: 75, y: 180, z: 0}
+--- !u!114 &6687213946633790806
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -298,10 +298,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 2155146316799246279}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8883da8708dcc4b4d9175557bd5cf710, type: 3}
+  m_Script: {fileID: 11500000, guid: 5046c4844ec39164ea9e7d30292e95fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 0}
+  _guideTextPanel: {fileID: 3563365661482239568}
+  _guideImagePanel: {fileID: 6730769565828045720}
+  keys:
+  - Welcome
+  - LiveLocation
+  - Synchronize
+  - Warming up
+  - Warming up
+  values:
+  - guideImage: {fileID: 21300000, guid: a3f79cd3ad850f547a661b6b8b67678e, type: 3}
+    guideText: DirectionGuesser
+  - guideImage: {fileID: 21300000, guid: f8e002c2b5f87aa4db87dd04f0cea76b, type: 3}
+    guideText: What is your current location?
+  - guideImage: {fileID: 21300000, guid: db5201a4e942da9429c2628439bc5dfb, type: 3}
+    guideText: Use controller Trigger
+  - guideImage: {fileID: 21300000, guid: f8e002c2b5f87aa4db87dd04f0cea76b, type: 3}
+    guideText: Aim directions and shoot
+  - guideImage: {fileID: 21300000, guid: 3e499ea7f7cce654da6bff0a7f843171, type: 3}
+    guideText: Point at Cities
 --- !u!1 &2222070608978642337
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,8 +495,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8039567086963658369, guid: 07d3df42a6bd72048bb79d0e9339ff03, type: 3}
-  - {fileID: -2610375937273821394, guid: 399d4c044221767409d5c8a8eb577855, type: 3}
+  - {fileID: 2100000, guid: 7010836606bb6314aabe4086b9a26eac, type: 2}
+  - {fileID: 4542641088041586163, guid: 9d54c921bfe0ef74086a4d2f99f0a0b4, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

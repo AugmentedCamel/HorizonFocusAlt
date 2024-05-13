@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/PrototypePhase/PolishedScene.unity
     guid: 8c8b2e95a15a8cc4782a2b9cd1f2c728
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/HackatonPhase/HackatonV1.unity
     guid: d0bb0871426788c41a27b18f336cf7f8
   - enabled: 0
@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene/VirtualKeyboard.unity
     guid: d2e865b3000f70649a9608e1715a905a
+  - enabled: 1
+    path: Assets/Scenes/HackatonPhase/HackatonV2.unity
+    guid: 578257160f971ad4d9dbd5d29c843ca2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 437907eeea0cb334f8fe49c8c3709e67,
       type: 2}

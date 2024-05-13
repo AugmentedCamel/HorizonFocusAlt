@@ -23,7 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private VisualScoreController _visualScoreController;
     [SerializeField] private SFXLauncher _sfxLauncher;
     [SerializeField] private DialogueEventManager _dialogueEventManager;
-    
+
+    [SerializeField] private GameObject _horizonFocusTarget;
     
     
     // Start is called before the first frame update
@@ -105,7 +106,7 @@ public class GameManager : MonoBehaviour
     {
         turnCounter = 1; // turn 0 is for syncing the north
         _sceneActivator.ActivateObjectsThree();
-        
+        _horizonFocusTarget.SetActive(true);
         Invoke("NewTurn", 2);
         
     }
@@ -153,6 +154,7 @@ public class GameManager : MonoBehaviour
         }
         else if (turnCounter == 4) //should introduce cities
         {
+            _horizonFocusTarget.SetActive(false);
             _dialogueEventManager.OnBeginCities();
             float newTarget = _targetGenerator.GenerateTargetCity();
             string newTargetstring = _targetGenerator.currentTarget;

@@ -136,6 +136,8 @@ PlayerSettings:
   bundleVersion: 0.1.2c_pidgey
   preloadedAssets:
   - {fileID: 11400000, guid: a6e9e3239535e844aade5387fdfb6931, type: 2}
+  - {fileID: -8009133360794218551, guid: 50a0c4f37eedfe24fbeb16f40e258216, type: 2}
+  - {fileID: 11400000, guid: 437907eeea0cb334f8fe49c8c3709e67, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
