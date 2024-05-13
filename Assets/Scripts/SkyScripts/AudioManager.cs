@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
 {
    // Singleton instance
    public static AudioManager instance;
+   [SerializeField] private Animator _birdAnimator;
    
    [Header("SCENE AUDIO")]
    [SerializeField] private AudioSource _atmosphereSource;  // 2D audio atmosphere
@@ -67,6 +68,18 @@ public class AudioManager : MonoBehaviour
       }
 
       _narrationSource.PlayOneShot(_narrationClips[clipIndex]);
+      BirdIsTalking();
+   }
+   
+   public void BirdIsTalking()  // Bird is talking
+   {
+      _birdAnimator.SetBool("IsTalking", true);
+      Invoke("BirdIsNotTalking", 7);
+   }
+   
+   private void BirdIsNotTalking()
+   {
+      _birdAnimator.SetBool("IsTalking", false);
    }
    
    

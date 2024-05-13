@@ -37,7 +37,7 @@ public class DialogueEventManager : MonoBehaviour
     {
         //index 3 after succesfull city input ask to grab phone and open compass app
         _audioManager.PlayNarrationClip(3);
-        _ipadScreenManager.ToggleIpadScreen("Syncronize");
+        _ipadScreenManager.ToggleIpadScreen("Synchronize");
     }
     
     
@@ -51,7 +51,7 @@ public class DialogueEventManager : MonoBehaviour
     {
         //index 6 ask to point at west
         _audioManager.PlayNarrationClip(6);
-        _ipadScreenManager.ToggleIpadScreen("WarmingUp");
+        _ipadScreenManager.ToggleIpadScreen("Warming up");
     }
     
     public void OnArrowEast()
@@ -64,7 +64,7 @@ public class DialogueEventManager : MonoBehaviour
     {
         //index 11 to start with cities
         _audioManager.PlayNarrationClip(11);
-        _ipadScreenManager.ToggleIpadScreen("City");
+        _ipadScreenManager.ToggleIpadScreen("Cities");
     }
     
     public void OnFeedbackPositive()

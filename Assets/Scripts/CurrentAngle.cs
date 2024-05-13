@@ -30,7 +30,7 @@ public class CurrentAngle : MonoBehaviour
             }
             
             // Check if the current angle has passed a multiple of 10 degrees since the last event
-            if (Mathf.Floor(currentAngle / 10) != Mathf.Floor(lastEventAngle / 10))
+            if (Mathf.Floor(currentAngle / 25) != Mathf.Floor(lastEventAngle / 25))
             {
                 // Fire the event
                 _sfxLauncher.LaunchControllerTurnsTen(); // Replace with the appropriate event
