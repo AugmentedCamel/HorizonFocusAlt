@@ -90,6 +90,13 @@ public class GameManager : MonoBehaviour
         _signPostController.SpawnSignPostAt(0, "NORTH");
         
     }
+
+    public void OnSuccesfullCoordinatesEntry()
+    {
+        //should continue the game and 
+        
+        OnSyncGame();
+    }
     
     public void OnSyncGame()
     {

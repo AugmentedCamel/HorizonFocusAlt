@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f3e9417-b4f2-4a8a-b904-0c0f599983ff" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HorizonFocusAlt/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/DialogueEventManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/DialogueEventManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Oculus/OculusProjectConfig.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/HackatonPhase/HackatonV2.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkyScripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkyScripts/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Wit.ai/ChatGPTManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Wit.ai/ChatGPTManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +104,7 @@
       <workItem from="1715469165668" duration="1003000" />
       <workItem from="1715499027873" duration="991000" />
       <workItem from="1715509328393" duration="29932000" />
-      <workItem from="1715598512582" duration="1975000" />
+      <workItem from="1715598512582" duration="2664000" />
     </task>
     <servers />
   </component>
