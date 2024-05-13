@@ -107,7 +107,7 @@ public class GameManager : MonoBehaviour
         turnCounter = 1; // turn 0 is for syncing the north
         _sceneActivator.ActivateObjectsThree();
         _horizonFocusTarget.SetActive(true);
-        Invoke("NewTurn", 2);
+        Invoke("NewTurn", 16); //this will wait for narration event to explain game
         
     }
     

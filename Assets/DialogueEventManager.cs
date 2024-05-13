@@ -45,14 +45,20 @@ public class DialogueEventManager : MonoBehaviour
     {
         //index 5 put phone down its all good
         _audioManager.PlayNarrationClip(5);
+        Invoke("GameExplanation", 5f);
     }
-    
+    public void GameExplanation()
+    {
+        _audioManager.PlayNarrationClip(17);
+    }
     public void OnStartWarmingUp()
     {
         //index 6 ask to point at west
         _audioManager.PlayNarrationClip(6);
         _ipadScreenManager.ToggleIpadScreen("Warming up");
     }
+
+    
     
     public void OnArrowEast()
     {
@@ -88,6 +94,10 @@ public class DialogueEventManager : MonoBehaviour
         if (Random.Range(0, 3) == 0)
         {
             _audioManager.PlayNarrationClip(10);
+        }
+        else
+        {
+            _audioManager.PlayNarrationClip(14);
         }
         
     }
