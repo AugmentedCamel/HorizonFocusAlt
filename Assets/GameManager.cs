@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Meta.WitAi.Attributes;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -270,6 +271,7 @@ public class GameManager : MonoBehaviour
         _totalScoreText.text = ("Total Score: " + totalScore.ToString());
         
     }
+
     
     public void OnGameOver()
     {
