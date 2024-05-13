@@ -10,7 +10,7 @@ public class PassthroughController : MonoBehaviour
     
     
     private float _lerpDuration = 0.5f;
-    private float _passthroughOpacityStart = 1f;
+    private float _passthroughOpacityStart = 0.7f;
     private float _passthroughOpacityEnd = 0.08f;
     
     // Start is called before the first frame update
